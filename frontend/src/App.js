@@ -44,7 +44,7 @@ function App() {
       </video>
       <header className={isHeaderVisible ? '' : 'hidden'}>
         <div>
-          <h1 onClick={handleTitleClick}>EPIC EXPLORER</h1>
+          <h1 onClick={handleTitleClick}>NASA VOYAGE</h1>
         </div>
         <nav>
           <ul>
