@@ -20,14 +20,14 @@ const TimeLapseAnimation = () => {
         const response = await axios.get(`http://localhost:5000/api/epic/date/${date}`);
         console.log('API response:', response.data);
         if (response.data.length === 0) {
-          setError('TIDAK ADA GAMBAR TERSEDIA UNTUK TANGGAL YANG DIPILIH. SILAKAN COBA TANGGAL LAIN.');
+          setError('NO IMAGES AVAILABLE FOR THE SELECTED DATE. PLEASE TRY ANOTHER DATE.');
           setImages([]);
         } else {
           setImages(response.data);
         }
       } catch (err) {
         console.error('Error mengambil gambar:', err);
-        setError('TERJADI KESALAHAN SAAT MENGAMBIL GAMBAR. SILAKAN COBA LAGI.');
+        setError('AN ERROR OCCURRED WHILE FETCHING IMAGES. PLEASE TRY AGAIN.');
         setImages([]);
       } finally {
         setLoading(false);
@@ -64,7 +64,7 @@ const TimeLapseAnimation = () => {
   return (
     <div className="time-lapse-animation component-wrapper">
       <div className="timelapse-header">
-        <h2>ANIMASI TIME LAPSE</h2>
+        <h2>TIME LAPSE ANIMATION</h2>
         <div className="timelapse-controls">
           <input 
             type="date" 

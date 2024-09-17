@@ -31,7 +31,7 @@ const MetadataAnalysis = () => {
       const response = await axios.get(`http://localhost:5000/api/epic/metadata/${startDate}/${endDate}`);
       console.log('Response received:', response.data);
       if (response.data.length === 0) {
-        throw new Error('Tidak ada data tersedia untuk rentang tanggal ini. Coba rentang tanggal lain.');
+        throw new Error('No data available for this date range. Try another date range.');
       }
       const processedData = response.data.map(item => ({
         date: new Date(item.date).toLocaleDateString(),
@@ -77,7 +77,7 @@ const MetadataAnalysis = () => {
 
   return (
     <div className="metadata-analysis">
-      <h2>Analisis Metadata</h2>
+      <h2>Metadata Analysis</h2>
       <div className="date-inputs">
         <input 
           type="date" 

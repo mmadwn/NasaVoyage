@@ -20,7 +20,7 @@ const EarthRotation = () => {
     try {
       const response = await axios.get(`http://localhost:5000/api/epic/date/${date}`);
       if (response.data.length === 0) {
-        setError('Tidak ada data tersedia untuk tanggal ini. Coba tanggal lain.');
+        setError('No data available for this date. Try another date.');
         setRotationImages([]);
       } else {
         setRotationImages(response.data);
@@ -79,7 +79,7 @@ const EarthRotation = () => {
   return (
     <div className="earth-rotation component-wrapper">
       <div className="rotation-header">
-        <h2>ROTASI BUMI</h2>
+        <h2>EARTH ROTATION</h2>
         <div className="rotation-controls">
           <DateSelector onDateSelect={handleDateSelect} selectedDate={selectedDate} />
         </div>

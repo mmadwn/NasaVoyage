@@ -7,7 +7,7 @@ const EpicImage = ({ image }) => {
     <div className="epic-image">
       <img src={imageUrl} alt={image.caption} style={{ width: '100%', maxWidth: '300px', height: 'auto' }} />
       <p className="image-caption">{image.caption}</p>
-      <p className="image-date">Tanggal: {image.date}</p>
+      <p className="image-date">Date: {image.date}</p>
     </div>
   );
 };

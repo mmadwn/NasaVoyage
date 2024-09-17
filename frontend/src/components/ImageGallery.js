@@ -29,7 +29,7 @@ const ImageGallery = () => {
       }
       setLoading(false);
     } catch (err) {
-      setError('Terjadi kesalahan saat mengambil gambar. Silakan coba lagi.');
+      setError('AN ERROR OCCURRED WHILE FETCHING IMAGES. PLEASE TRY AGAIN.');
       setLoading(false);
       console.error('Error fetching images:', err);
     }
@@ -60,7 +60,7 @@ const ImageGallery = () => {
   return (
     <div className="image-gallery component-wrapper">
       <div className="gallery-header">
-        <h2>GALERI GAMBAR EPIC</h2>
+        <h2>EPIC IMAGE GALLERY</h2>
         <div className="gallery-controls">
           <DateSelector onDateSelect={handleDateSelect} />
         </div>
@@ -77,7 +77,7 @@ const ImageGallery = () => {
           </Slider>
         </div>
       ) : (
-        <p className="no-images-message">TIDAK ADA GAMBAR TERSEDIA UNTUK TANGGAL YANG DIPILIH.</p>
+        <p className="no-images-message">NO IMAGES AVAILABLE FOR THE SELECTED DATE.</p>
       )}
     </div>
   );

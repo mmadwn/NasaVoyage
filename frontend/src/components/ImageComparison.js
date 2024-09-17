@@ -31,7 +31,7 @@ const ImageComparison = () => {
       }
     } catch (error) {
       console.error('Error fetching image:', error);
-      setError('TERJADI KESALAHAN SAAT MENGAMBIL GAMBAR. SILAKAN COBA LAGI.');
+      setError('AN ERROR OCCURRED WHILE FETCHING THE IMAGE. PLEASE TRY AGAIN.');
     } finally {
       setLoading(false);
     }
@@ -62,27 +62,27 @@ const ImageComparison = () => {
   return (
     <div className="image-comparison component-wrapper">
       <div className="comparison-header">
-        <h2>PERBANDINGAN GAMBAR</h2>
+        <h2>IMAGE COMPARISON</h2>
         <div className="comparison-controls">
           <div className="date-inputs">
-            <DateSelector onDateSelect={handleDateSelect1} selectedDate={date1} label="Tanggal 1" />
-            <DateSelector onDateSelect={handleDateSelect2} selectedDate={date2} label="Tanggal 2" />
+            <DateSelector onDateSelect={handleDateSelect1} selectedDate={date1} label="Date 1" />
+            <DateSelector onDateSelect={handleDateSelect2} selectedDate={date2} label="Date 2" />
           </div>
         </div>
       </div>
       
-      {loading && <div className="loading-spinner"><div className="spinner"></div><p>Memuat gambar perbandingan...</p></div>}
+      {loading && <div className="loading-spinner"><div className="spinner"></div><p>Loading comparison images...</p></div>}
       {error && <div className="error">{error}</div>}
       {image1 && image2 && (
         <div className="comparison-images">
           <AdvancedImageComparison image1={image1.url} image2={image2.url} />
           <div className="image-captions">
-            <p><strong>Tanggal 1:</strong> {image1.date} - {image1.caption}</p>
-            <p><strong>Tanggal 2:</strong> {image2.date} - {image2.caption}</p>
+            <p><strong>Date 1:</strong> {image1.date} - {image1.caption}</p>
+            <p><strong>Date 2:</strong> {image2.date} - {image2.caption}</p>
           </div>
         </div>
       )}
-      {(!image1 || !image2) && !loading && <p className="no-images-message">TIDAK ADA GAMBAR TERSEDIA UNTUK PERBANDINGAN. SILAKAN PILIH TANGGAL LAIN.</p>}
+      {(!image1 || !image2) && !loading && <p className="no-images-message">NO IMAGES AVAILABLE FOR COMPARISON. PLEASE SELECT ANOTHER DATE.</p>}
     </div>
   );
 };

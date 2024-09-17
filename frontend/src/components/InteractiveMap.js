@@ -47,7 +47,7 @@ const InteractiveMap = () => {
   return (
     <div className="interactive-map">
       <div className="map-header">
-        <h2>PETA INTERAKTIF</h2>
+        <h2>INTERACTIVE MAP</h2>
         <div className="map-controls">
           <input 
             type="date" 
@@ -71,7 +71,7 @@ const InteractiveMap = () => {
           ))}
         </MapContainer>
       ) : (
-        <p>TIDAK ADA GAMBAR TERSEDIA UNTUK TANGGAL YANG DIPILIH.</p>
+        <p>NO IMAGES AVAILABLE FOR THE SELECTED DATE.</p>
       )}
     </div>
   );
